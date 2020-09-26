@@ -1,4 +1,5 @@
 # Fast security scanners/checks
+![Logo](Logo inline.png)
 
 ## XSS via Web Cache Deception
 `docker run --rm -it --name wcdscanner -e VULN_ID=1 -e FIND_XSS=True -e DOMAIN=site.com whitespots/wcdxss`
