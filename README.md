@@ -12,3 +12,6 @@
 
 ## Path Traversal via url path
 `docker run --rm -it --name ptrav-finder -e VULN_ID=1 -e DOMAIN=site.com whitespots/ptrav-finder`
+
+## Check your 403 for bypasses
+`docker run --rm --name forbid-bypasser -e VULN_ID=1 -e DOMAIN=site.com whitespots/forbid-bypasser`
