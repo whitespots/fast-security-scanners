@@ -9,3 +9,6 @@
 
 ## CRLF vulnerabilities via url path and headers
 `docker run --rm -it --name crlf-finder -e VULN_ID=1 -e DOMAIN=site.com whitespots/crlf-finder`
+
+## Path Traversal via url path
+`docker run --rm -it --name ptrav-finder -e VULN_ID=1 -e DOMAIN=site.com whitespots/ptrav-finder`
