@@ -1,11 +1,17 @@
 # Fast security scanners/checks
 ![Logo](images/Logo.png)
 
-## XSS via Meta tags
-`docker run --rm -it --name wcdscanner -e VULN_ID=wcdxss -e FIND_XSS=True -e DOMAIN=site.com whitespots/wcdxss`
+# A small contribution to community :)
+We use all these tools in security assessments and in our [vulnerability monitoring service](https://whitespots.io/vulnerability-monitoring)
+
+## Check your domain for DNS NS takeover
+`docker run --dns=8.8.8.8 -e VULN_ID=dns_ns_takeover -e DOMAIN=site.com whitespots/dnsnstakeover`
 
 ## Cache Poisoning
-`docker run --rm -it --name wcdscanner -e VULN_ID=wcdxss -e FIND_XSS=False -e DOMAIN=site.com whitespots/wcdxss`
+`docker run --rm -it --name wcdscanner -e VULN_ID=wcd -e FIND_XSS=False -e DOMAIN=site.com whitespots/wcdxss`
+
+## XSS via Meta tags (exploitable with cache poisoning)
+`docker run --rm -it --name wcdscanner -e VULN_ID=xss_meta -e FIND_XSS=True -e DOMAIN=site.com whitespots/wcdxss`
 
 ## CORS misconfiguration on pages from Webarchives
 `docker run --rm -it --name corsfinder -e VULN_ID=cors -e DOMAIN=site.com whitespots/corsfinder`
@@ -23,4 +29,5 @@
 `docker run --rm -it --name adminfinder -e VULN_ID=adminfinder -e DOMAIN=site.com whitespots/adminfinder`
 
 ## Check your site for social networks "accounts takeover" via broken social network links
-`docker run --rm -it --name scanner -e VULN_ID=1 -e DOMAIN=site.com whitespots/brokensocial`
+`docker run --rm -it --name scanner -e VULN_ID=broken_social -e DOMAIN=site.com whitespots/brokensocial`
+
